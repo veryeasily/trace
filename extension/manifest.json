@@ -1,0 +1,24 @@
+{
+  "name": "Trace",
+  "version": "0.1020",
+  "manifest_version": 2,
+  "description": "Trace makes text mean more to more people",
+  "browser_action": {
+    "default_icon": "images/icon3.png",
+	"default_popup": "chrome/popup.html"
+  },
+  "background": {
+    "scripts": ["chrome/main.js"]
+  },
+  "icons":{
+    "128":"images/icon.png"
+  },
+  "content_scripts": [ {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["scripts/socket.io.js", "scripts/underscore.js", "scripts/jquery.min.js", "content-script/signifier.js"],
+	  "css": ["css/mainstyle.css"]
+  }  ],
+  "permissions": [
+  	"tabs", "http://127.0.0.1:7000/*", "https://127.0.0.1:7000/*"
+  ]
+}
