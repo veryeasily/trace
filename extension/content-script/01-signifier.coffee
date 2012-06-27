@@ -9,6 +9,7 @@ logging = true
 #
 # 	ToDo:  	Direct connections with facebook and twitter to
 # 			lower database load.
+#
 
 class Trace
 	## I can't remember why I made this
@@ -27,7 +28,7 @@ class Trace
 				if logging then console.log child
 				return [child, child.data.indexOf(str)]
 			else if child.nodeType is 1
-				if logging then console.log "dove a level deeper with findTextNode"
+				console.log "dove a level deeper with findTextNode" if logging
 				@findTextNode str, child
 
 	@getNeighborhood: ->
@@ -40,7 +41,7 @@ class Trace
 				console.log links
 			Trace.queWorkingLinks links
 			observer = new WebKitMutationObserver (mutations) ->
-				if logging then console.log mutations
+				console.log mutations if logging
 				window.mutations = mutations
 				possibleElts = []
 

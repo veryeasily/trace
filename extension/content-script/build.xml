@@ -1,6 +1,6 @@
 <project default="concatenate">
 	<target name="concatenate">
-		<concat destfile="signifier.coffee">
+		<concat destfile="trace.coffee">
 			<fileset dir="." includes="*.coffee" />
 		</concat>
 	</target>

@@ -1,7 +1,8 @@
 $ ->
 	chrome.extension.sendMessage({signStatus: Trace.signsFound}, (response) ->
-		console.log response
+		console.log response if logging
 	)
 	Trace.activate()
 	Sign.activate()
-	return console.log "Trace activated" if logging
+	if logging
+		return console.log "Trace activated"
